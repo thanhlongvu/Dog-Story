@@ -81,7 +81,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711030519755448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.37, y: 0, z: 0}
+  m_LocalPosition: {x: -31.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4342012270346526}
@@ -162,12 +162,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 4359926703053696}
   end: {fileID: 4862473940820334}
-  rightAttackVector: {x: 15, y: 5}
-  leftAttackVector: {x: -10, y: 5}
-  speed: 5
+  rightAttackVector: {x: 15, y: 6.5}
+  leftAttackVector: {x: -10, y: 6.5}
+  speed: 6
   rangeAttack: 8.5
-  isMoveRight: 0
-  isPatrol: 0
+  isMoveRight: 1
+  isPatrol: 1
   isAttack: 0
   patrolFishSprite: {fileID: 21300000, guid: 20538edb0d688524882b267afc68d98c, type: 3}
   attackFishSprite: {fileID: 21300000, guid: c9e306ef23f4b5e46a35679fd6b23b6a, type: 3}

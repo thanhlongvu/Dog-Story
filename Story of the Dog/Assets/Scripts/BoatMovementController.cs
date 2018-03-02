@@ -7,7 +7,9 @@ public class BoatMovementController : MonoBehaviour {
 	public GameObject boat; 
 	public float speedBoat;
 
+	public Transform headPoint;
 	public Transform endPoint;
+
 
 	public LayerMask whatIsCreature;
 	public Animation boatController;
@@ -17,10 +19,15 @@ public class BoatMovementController : MonoBehaviour {
 
 	[SerializeField]
 	private float radiusCheck;
+
+
+	private bool isMoveToRight;
 	// Use this for initialization
 	void Start () {
 		isTurnOnBoat = false;
 		moveBoat = false;
+
+		isMoveToRight = true;
 	}
 	
 	// Update is called once per frame
@@ -34,7 +41,7 @@ public class BoatMovementController : MonoBehaviour {
 			isTurnOnBoat = false;
 		}
 
-		if(moveBoat && boat.transform.position.x < endPoint.position.x)
+		if(moveBoat)
 		{
 			MoveBoat();
 		}
@@ -50,10 +57,31 @@ public class BoatMovementController : MonoBehaviour {
 
 	private void MoveBoat()
 	{
-		// boat.transform.Translate(0, speedBoat * Time.deltaTime, 0);
-		boat.transform.position = Vector2.MoveTowards(boat.transform.position, endPoint.position, speedBoat * Time.deltaTime);
+		//Move to the right
+		if(isMoveToRight)
+		{
+			if(boat.transform.position.x < endPoint.position.x)
+			{
+				boat.transform.position = Vector2.MoveTowards(boat.transform.position, endPoint.position, speedBoat * Time.deltaTime);
+			}
+			else
+			{
+				isMoveToRight = false;
+				moveBoat = false;
+			}
+		}
+		//Move to the left
+		else
+		{
+			if(boat.transform.position.x > headPoint.transform.position.x)
+			{
+				boat.transform.position = Vector2.MoveTowards(boat.transform.position, headPoint.position, speedBoat * Time.deltaTime);
+			}
+			else
+			{
+				isMoveToRight = true;
+				moveBoat = false;
+			}
+		}
 	}
-
-
-	
 }

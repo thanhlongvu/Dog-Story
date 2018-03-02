@@ -64,7 +64,6 @@ public class FishCrazyScript : MonoBehaviour {
 	//Patrol
 	private void Patrol()
 	{
-		GetComponent<SpriteRenderer>().sprite = patrolFishSprite;
 		if(isMoveRight)
 		{
 			GetComponent<SpriteRenderer>().flipX = false;
@@ -136,6 +135,8 @@ public class FishCrazyScript : MonoBehaviour {
 	{
 		if(transform.position.y < yBegin)
 		{
+			GetComponent<SpriteRenderer>().sprite = patrolFishSprite;
+
 			rb2d.gravityScale = 0;
 			rb2d.velocity = Vector2.zero;
 			transform.position = new Vector2(transform.position.x, yBegin);
@@ -150,7 +151,7 @@ public class FishCrazyScript : MonoBehaviour {
 	private bool Meet()
 	{
 		if(player.transform.position.x < head.transform.position.x && player.transform.position.x > end.transform.position.x
-						 && player.transform.position.y > transform.position.y)
+						 && transform.position.y == yBegin)
 		{
 			if(isMoveRight && player.transform.position.x > transform.position.x)
 				return true;
