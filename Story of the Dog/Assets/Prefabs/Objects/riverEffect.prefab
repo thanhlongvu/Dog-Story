@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4568226884419038}
   - component: {fileID: 212305223572449646}
   - component: {fileID: 95593036971840660}
-  - component: {fileID: 253533783479462002}
-  - component: {fileID: 61631258519805638}
   - component: {fileID: 68699010176007736}
   m_Layer: 0
   m_Name: riverEffect
@@ -38,37 +36,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1726893898378762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 93.96, y: -5.91, z: 0}
-  m_LocalScale: {x: 67.3, y: 2.8, z: 1}
+  m_LocalPosition: {x: 102, y: -5.91, z: 0}
+  m_LocalScale: {x: 79.8, y: 2.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61631258519805638
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726893898378762}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.079679176}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.1206416}
-  m_EdgeRadius: 0
 --- !u!68 &68699010176007736
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -147,21 +120,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!253 &253533783479462002
-BuoyancyEffector2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726893898378762}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_SurfaceLevel: 0.55
-  m_Density: 10
-  m_LinearDrag: 10
-  m_AngularDrag: 0
-  m_FlowAngle: 0
-  m_FlowMagnitude: 0
-  m_FlowVariation: 0

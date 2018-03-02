@@ -104,7 +104,6 @@
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
-     <Compile Include="Assets\FishCrazyScript.cs" />
      <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Resources\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
@@ -116,6 +115,7 @@
      <Compile Include="Assets\Scripts\CoinController.cs" />
      <Compile Include="Assets\Scripts\CreatureMovement.cs" />
      <Compile Include="Assets\Scripts\EnemyDead.cs" />
+     <Compile Include="Assets\Scripts\FishCrazyScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\JumpObjectController.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
