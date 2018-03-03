@@ -165,6 +165,16 @@ public class FishCrazyScript : MonoBehaviour {
 	}
 
 
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.tag == "Player")
+		{
+			//The player is attacked
+			Debug.Log("Fish attack");
+		}
+	}
+
+
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.red;

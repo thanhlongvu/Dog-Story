@@ -201,7 +201,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019474506, y: -0.360281}
+  m_Offset: {x: -0.07479, y: -0.360281}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -212,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7794561, y: 1.3036399}
+  m_Size: {x: 0.98044395, y: 1.3036399}
   m_EdgeRadius: 0
 --- !u!95 &95213283123326032
 Animator:
@@ -239,9 +239,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1221942887986568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb225fb006ec039408ff8bb8e5c4b840, type: 3}
+  m_Script: {fileID: 11500000, guid: bc6e280c781916d40ab7b15e94d72969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeCooldownAttack: 2
   coinObject: {fileID: 1230059332441420, guid: 0fcfcc87ba1ec2e4f9b8339b0eead4c1, type: 2}
   deadEffect: {fileID: 1568535306296806, guid: bef0436785635654091d174eb4a2f4af, type: 2}
   force: 500

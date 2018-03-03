@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour {
 
 	[Header("Information")]
+	public bool isAttack;
 	public float speed = 10f;
 	
 	public float jumpForce = 20f;
@@ -33,8 +34,6 @@ public class MovementController : MonoBehaviour {
 	public bool isJump;
 	public bool isFall;
 
-	public PhysicsMaterial2D phyMat2d;
-
 	[Header("Debug")]
 	public bool drawGizmos;
 	void Start () {
@@ -54,8 +53,7 @@ public class MovementController : MonoBehaviour {
 	void Update () {
 		MoveAndJump();
 		ChangeAnimation();
-		//Collider with enemy
-		ColliderWithEnemy();
+		
 
 	}
 
@@ -95,6 +93,7 @@ public class MovementController : MonoBehaviour {
 		//Ignore check LayerMask to exterminat enemy
 		if((Input.GetKeyDown(KeyCode.W) || isFall) && !onGround )
 		{
+			isAttack = true;
 			radiusCheck = 0;
 			//Increase fall speed
 			fallForce = fallForceMax;
@@ -110,6 +109,7 @@ public class MovementController : MonoBehaviour {
 		//Mobile
 		if(!isFall && fallForce == fallForceMax)
 		{
+			isAttack = false;
 			radiusCheck = radiusCheckBegin;
 			fallForce = fallForceMax / 3;
 		}
@@ -120,6 +120,9 @@ public class MovementController : MonoBehaviour {
 		onGround = Physics2D.OverlapCircle(groundCheck.position, radiusCheck, whatIsGround);
 		AddForceFall();
 
+
+		//Collider with enemy
+		ColliderWithEnemy();
 	}
 
 	private void Flip()
@@ -160,7 +163,7 @@ public class MovementController : MonoBehaviour {
 	//Add velocity for y axis
 	private void ColliderWithEnemy()
 	{
-		if(Physics2D.OverlapCircle(groundCheck.position, radiusCheck, whatIsEnemy))
+		if(Physics2D.OverlapCircle(groundCheck.position, radiusCheck * 1.2f, whatIsEnemy))
 		{
 			rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
 		}
@@ -178,6 +181,15 @@ public class MovementController : MonoBehaviour {
 
 
 
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if(other.transform.tag == "Ground" && isFall == true)
+		{
+			isFall = false;
+		}
+	}
+
+
 
 
 	void OnDrawGizmos()
@@ -186,6 +198,8 @@ public class MovementController : MonoBehaviour {
 		{
 			Gizmos.color = Color.red;
 			Gizmos.DrawWireSphere(groundCheck.position, radiusCheck);
+			Gizmos.DrawWireSphere(groundCheck.position, radiusCheck * 1.2f);
+			// Gizmos.DrawWireCube(groundCheck.position, new Vector2(radiusCheck * 2.5f, radiusCheck /2));
 		}
 		
 	}
